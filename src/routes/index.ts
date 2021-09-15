@@ -1,9 +1,8 @@
 import express from "express"
-const router = express.Router()
+import discord from "./discord"
+import api from "./api"
 
-/* GET home page. */
-router.get("/", (req, res, next) => {
-  res.status(200).json("Hello World")
-})
-
-export default router
+export default function defineRouter(app: express.Application) {
+  app.use("/api", api)
+  app.use("/api/discord", discord)
+}

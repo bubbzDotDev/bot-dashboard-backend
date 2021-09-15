@@ -1,13 +1,9 @@
 import express from "express"
-import path from "path"
-import indexRouter from "./routes/index"
+import define from "./define/"
 
-const app = express()
+const app: express.Application = express()
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(express.static(path.join(__dirname, "public")))
-
-app.use("/", indexRouter)
+define(app)
+console.log("Starting app")
 
 export default app
