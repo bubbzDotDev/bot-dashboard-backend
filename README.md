@@ -9,11 +9,15 @@ To get the Node server running locally:
 
 # Code Overview
 
-## Dependencies
+## Technologies
 
 - [Express](https://www.npmjs.com/package/express) - The server for handling and routing HTTP requests
 
 - [Discord.js](https://discord.js.org/#/) - Create Discord commands and bot interactions
+
+- [Docker](https://www.docker.com/) - Containerize application
+
+- [MySQL](https://www.docker.com/) - Used for SQL Database services
 
 ## Application Structure
 
