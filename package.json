@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
-    "build": "nodemon --build npm start",
-    "prestart": "npm run lint",
+    "migrate": "npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:all",
+    "prestart": "npm run migrate && npm run seed && npm run lint",
     "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nodemon --build npm start"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",

@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "Trysta525",
-    "database": "bot",
-    "host": "127.0.0.1",
+    "password": "Password1!",
+    "database": "announcement",
+    "host": "mysql",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
