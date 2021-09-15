@@ -3,9 +3,9 @@ To get the Node server running locally:
 
 - Clone this repo
 
-- `npm install` to install all required dependencies
+- `docker-compose build` Build Docker images
 
-- `npm run start` to start the local server
+- `docker-compose up` Spin up Docker container, access at localhost:3000 and 127.0.0.1:3307 for MySql
 
 # Code Overview
 
