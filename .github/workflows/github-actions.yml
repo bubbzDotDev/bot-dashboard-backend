@@ -11,4 +11,5 @@ jobs:
       - name: Lint
         uses: mooyoul/tslint-actions@v1.1.1
         with:
+          token: wildcat123
           pattern: '*.ts'
