@@ -34,3 +34,5 @@ To get the Node server running locally:
 	- `models/` - This folder contains the schema definitions for our Sequelize models.
 
 ## Authentication
+
+
