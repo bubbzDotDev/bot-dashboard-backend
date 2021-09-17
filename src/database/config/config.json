@@ -9,9 +9,10 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "Password1!",
+    "database": "announcement",
     "host": "127.0.0.1",
+    "port": 3333,
     "dialect": "mysql"
   },
   "production": {
