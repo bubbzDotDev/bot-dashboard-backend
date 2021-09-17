@@ -17,6 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
+    - uses: mirromutth/mysql-action@v1.1
+      with:
+        host port: 3333 # Optional, default value is 3306. The port of host
+        mysql database: 'announcement' # Optional, default value is "test". The specified database which will be create
+        mysql root password: Password1! # Required if "mysql user" is empty, default is empty. The root superuser password
     - uses: actions/checkout@v2
     - name: Install modules
       run: npm ci
