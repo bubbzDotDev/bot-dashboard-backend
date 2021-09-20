@@ -1,9 +1,9 @@
-import app from "../app"
 import supertest from "supertest"
+import app from "../app"
 import db from "../database/models"
 const request = supertest(app)
 
-afterAll(function () {
+afterAll(() => {
   db.sequelize.close()
 })
 
