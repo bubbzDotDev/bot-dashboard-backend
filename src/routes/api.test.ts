@@ -14,12 +14,6 @@ describe("Test Suite", () => {
   //   expect(res.text).toBe("Hello World!")
   // })
 
-  // it('"/discord" should return the word discord', async () => {
-  //   const res = await request.get("/api/discord")
-  //   expect(res.status).toBe(200)
-  //   expect(res.text).toBe("Discord")
-  // })
-
   it("Should run when calling Jest", () => {
     expect(true).toBe(true)
   })

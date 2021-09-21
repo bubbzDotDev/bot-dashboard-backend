@@ -6,11 +6,7 @@
 import debug from "debug"
 import http from "http"
 import app from "../app"
-import client from "../routes/discord/index"
-
-client.on("message", (message) => {
-  console.log(message)
-})
+import "../discord/index"
 
 const debugServer = debug("vuex-test-backend:server")
 
@@ -31,6 +27,7 @@ const server = http.createServer(app)
  * Listen on provided port, on all network interfaces.
  */
 
+console.log("Live HTTP!")
 server.listen(port)
 server.on("error", onError)
 server.on("listening", onListening)
@@ -88,5 +85,5 @@ function onError(error: any) {
 function onListening() {
   const addr = server.address() || "3000"
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port
-  debugServer("Listening on " + bind)
+  console.log("Listening on " + bind)
 }
