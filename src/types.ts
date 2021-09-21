@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize/types"
-import Users from "./db/models/user"
+import Users from "./database/models/user"
 
 export interface IIndexable {
     [key: string]: any

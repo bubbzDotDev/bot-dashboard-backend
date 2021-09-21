@@ -36,3 +36,4 @@ To get the Node server running locally:
 ## Authentication
 
 
+https://discord.com/oauth2/authorize?client_id=889616862718099526&permissions=8&scope=bot%20applications.commands
