@@ -6,6 +6,11 @@
 import debug from "debug"
 import http from "http"
 import app from "../app"
+import client from "../routes/discord/index"
+
+client.on("message", (message) => {
+  console.log(message)
+})
 
 const debugServer = debug("vuex-test-backend:server")
 
