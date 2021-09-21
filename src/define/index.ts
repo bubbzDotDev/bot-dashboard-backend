@@ -1,6 +1,7 @@
 import express from "express"
 import router from "../routes/"
 import defineCors from "./defineCors"
+import "./defineDotenv"
 import defineExpress from "./defineExpress"
 import definePath from "./definePath"
 
