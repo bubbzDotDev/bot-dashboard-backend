@@ -3,6 +3,8 @@ To get the Node server running locally:
 
 - Clone this repo
 
+- Update .env with project token
+
 - `docker-compose build` Build Docker images
 
 - `docker-compose up` Spin up Docker container. Access at port 3000, port 3307 for MySQL
