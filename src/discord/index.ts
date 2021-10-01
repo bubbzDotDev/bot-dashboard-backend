@@ -1,7 +1,8 @@
 import { Client, Intents, Message } from "discord.js"
-import controller from "../controllers/discordController"
+import info from "../controllers/info"
+import help from "../controllers/help"
+import announcement from "../controllers/announcement"
 const token = process.env.TOKEN
-
 
 const client = new Client()
 try {
@@ -12,21 +13,27 @@ try {
 }
 
 client.on("message", (req: Message) => {
-    const message = req.content.split(" ")
+    const message = req.content.trim().split(" ")
     const prefix = message[0].substring(0, 2)
-    const command = message[0].substring(2)
+    const command = message[0].length === 2 ? "" : message[0].substring(2)
     const arg: string[] = message.slice(1)
 
     if (prefix === "a!") {
         console.log(command)
         switch (command) {
             case "help":
-                controller.help(req, arg)
+                help(req, arg)
+                break
+            case "info":
+                info(req)
                 break
             case "announcement":
-                controller.announcement(req, arg)
+                announcement(req, arg)
                 break
-
+            case "":
+                arg.unshift(command)
+                announcement(req, arg)
+                break
         }
     }
 })
