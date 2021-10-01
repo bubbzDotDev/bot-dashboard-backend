@@ -1,10 +1,12 @@
 import { Client, Intents, Message } from "discord.js"
-import info from "../controllers/info"
+import announce from "../controllers/announce"
 import help from "../controllers/help"
-import announcement from "../controllers/announcement"
+import info from "../controllers/info"
 const token = process.env.TOKEN
 
-const client = new Client()
+// @ts-ignore
+const client: Client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
+
 try {
     client.login(token)
     console.log("Live Socket!")
@@ -12,7 +14,7 @@ try {
     console.log(error)
 }
 
-client.on("message", (req: Message) => {
+client.on("messageCreate", async (req: Message) => {
     const message = req.content.trim().split(" ")
     const prefix = message[0].substring(0, 2)
     const command = message[0].length === 2 ? "" : message[0].substring(2)
@@ -27,12 +29,13 @@ client.on("message", (req: Message) => {
             case "info":
                 info(req)
                 break
-            case "announcement":
-                announcement(req, arg)
-                break
             case "":
                 arg.unshift(command)
-                announcement(req, arg)
+                await announce(req, arg)
+                break
+            case "embed":
+            case "announce":
+                await announce(req, arg)
                 break
         }
     }
