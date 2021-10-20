@@ -102,6 +102,21 @@ export const announceIntroEm: MessageEmbed = new MessageEmbed()
 
         Respond with the \`#channel-name\` only.`)
 
+export const announceRoleEm: MessageEmbed = new MessageEmbed()
+    .setColor(defaultColor)
+    .setDescription(
+        `Do you want to mention a role or have other text above the embedded announcement?
+
+         **Respond** with either **yes** or **no**.`)
+
+export const announceMentionEm: MessageEmbed = new MessageEmbed()
+    .setColor(defaultColor)
+    .setDescription(
+        `How are you pinging? Respond with @everyone, @here, or @some other role.
+
+            If not pinging, you can add a short sentence summary of your announcement here.
+            This entry will appear above the embedded announcement message.`)
+
 export const announceDisplayEm = new MessageEmbed()
     .setColor("#5865F2")
     .setAuthor("Author (URL)", discordLogoURL, botAddURL)
