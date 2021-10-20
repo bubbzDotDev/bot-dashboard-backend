@@ -2,13 +2,11 @@
 
 - Clone this repo
 
-- Run `git update-index --skip-worktree .env` to prevent .env detecting changes
+- (**Devs Only**) Run `git update-index --skip-worktree .env` to prevent `.env` detecting changes
 
-- Update .env with project token
+- Update `.env` with project token (Bot Token)
 
-- `docker-compose build` Build Docker images (May need to run twice when repo is first cloned)
-
-- `docker-compose up` Spin up Docker container. Access at port 3000, port 3307 for MySQL
+- `npm run dock` - Lints Code, Builds Image, Runs Container, Runs Migrations, Runs Seeder, and Starts Server
 
 # Code Overview
 
@@ -26,18 +24,26 @@
 
 ## Application Structure
 
-- `src/` - Contains the application
+- `bin/www.ts` - The entry point to our application
 
-  - `bin/www.ts` - The entry point to our application
+- `database/` - Contains sequelize configs, migrations, seeders, and models
 
-  - `define/` - This folder contains app.js definitions for the Express server
+  - `config/` - Contains sequelize config variables
 
-  - `config/` - This folder contains configurations
+  - `migrations/` - Contains sequelize migrations
 
-  - `discord/` - This folder contains the discord.js entry point and establishes the socket connection
+  - `models/` - Contains sequelize models
 
-  - `routes/` - This folder contains the route definitions for our API
+  - `seeders/` - Contains sequelize seeders
 
-  - `controllers/` - This folder contains the controllers for the application
+- `define/` - Contains app definitions for the Express server
 
-  - `models/` - This folder contains the models for the application
+- `routes/` - Contains the route definitions for our API
+
+  - `discord/` - Contains the discord.js entry point and establishes the socket connection
+
+- `app.ts` - Creates the Express app
+
+## Frontend
+
+[Project Frontend Repository](https://github.com/bubbzDotDev/bot-dashboard)

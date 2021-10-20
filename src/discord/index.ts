@@ -1,7 +1,7 @@
 import { Client, Intents, Message } from "discord.js"
-import announce from "../controllers/announce"
-import help from "../controllers/help"
-import info from "../controllers/info"
+import announce from "./commands/announce"
+import help from "./commands/help"
+import info from "./commands/info"
 const token = process.env.TOKEN
 
 // @ts-ignore
@@ -21,7 +21,7 @@ client.on("messageCreate", async (req: Message) => {
     const arg: string[] = message.slice(1)
 
     if (prefix === "a!") {
-        console.log(command)
+        console.log(command || "a!")
         switch (command) {
             case "help":
                 help(req, arg)
@@ -31,11 +31,11 @@ client.on("messageCreate", async (req: Message) => {
                 break
             case "":
                 arg.unshift(command)
-                await announce(req, arg)
+                await announce(req)
                 break
             case "embed":
             case "announce":
-                await announce(req, arg)
+                await announce(req)
                 break
         }
     }
